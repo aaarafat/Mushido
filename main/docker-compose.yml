@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  ipproject:
+    image: sem22 # TODO Use Team as illustrated in document for example [sem01 or crd01]. Don't remove the comment.
+    build: .
+    volumes:
+      - /mnt/d/Fac/grader/inputs:/data/inputs
+      - /mnt/d/Fac/grader/outputs:/data/outputs
