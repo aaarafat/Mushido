@@ -2,3 +2,6 @@
 __pycache__
 inputs/*
 outputs/*
+!.gitkeep
+!inputs/.gitkeep
+!outputs/.gitkeep
