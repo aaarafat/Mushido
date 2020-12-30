@@ -8,6 +8,7 @@ from skimage.exposure import histogram
 from matplotlib.pyplot import bar
 from skimage.color import rgb2gray, rgb2hsv, rgba2rgb
 from skimage import img_as_ubyte
+from skimage.transform import rotate
 
 # Convolution:
 from scipy.signal import convolve2d
