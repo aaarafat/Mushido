@@ -5,3 +5,4 @@ outputs/*
 !.gitkeep
 !inputs/.gitkeep
 !outputs/.gitkeep
+notebooks/.vscode/settings.json
