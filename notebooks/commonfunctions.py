@@ -8,6 +8,8 @@ from skimage.exposure import histogram
 from matplotlib.pyplot import bar
 from skimage.color import rgb2gray, rgb2hsv, rgba2rgb
 from skimage import img_as_ubyte
+from skimage.transform import rotate
+
 import matplotlib.pyplot as plt
 from skimage.morphology import binary_erosion, binary_dilation, binary_closing, skeletonize, thin, binary_opening
 from skimage.measure import find_contours
