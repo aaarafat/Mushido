@@ -139,3 +139,37 @@ def thresholding_segment(img, window, t=10):
             else:
                 output[r-s][c-s] = 255
     return output
+
+
+def get_lengthes(img, offset=1):
+    cols = img.shape[1]
+    rows = img.shape[0]
+    cur = 0
+    hist = np.zeros((rows, rows), dtype=np.uint32)
+    for i in range(0, cols):
+        flag = False
+        begin = 0
+        blackRuns = []
+        whiteRuns = []
+        runtype = 0
+        while begin < rows and img[begin, i] == 1:
+            begin += 1
+        for j in range(begin, rows):
+            if img[j, i] == runtype:
+                cur += 1
+            else:
+                if runtype == 0:
+                    blackRuns.append(cur)
+                else:
+                    whiteRuns.append(cur)
+                cur = 1
+                runtype = img[j, i]
+                if flag:
+                    hist[blackRuns[-1], whiteRuns[-1]] += 1
+                flag = True
+        cur = 0
+    mx = np.max(hist)
+    ind = np.where(hist == mx)
+    thickness = ind[0][0]
+    distance = ind[1][0]
+    return thickness, distance
