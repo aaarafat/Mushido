@@ -20,7 +20,7 @@
 
 ## What Hardware were you using for training?
 
-- Windows 10 Home 64-bit
+- Windows 10 Home 64-bit (WSL2 Ubuntu 20.04)
 - Intel Core i7 7700HQ @ 2.80GHz
 - ram 16.0GB @ 1196MHz
 - 4095MB NVIDIA GeForce GTX 1050 Ti
