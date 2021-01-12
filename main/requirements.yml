@@ -1,6 +1,7 @@
 channels:
   - conda-forge
 dependencies:
-  - python 3.7
+  - joblib
+  - scikit-learn=0.23.2
   - opencv
   - scikit-image
