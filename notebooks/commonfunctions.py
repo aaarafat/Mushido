@@ -16,6 +16,8 @@ from skimage.measure import find_contours
 import skimage.draw as draw
 import skimage.filters as filters
 import skimage.exposure as ex
+from skimage.transform import rotate
+
 # Convolution:
 from scipy.signal import convolve2d
 from scipy import fftpack
