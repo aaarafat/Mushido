@@ -18,6 +18,10 @@
 - [About The Project](#about-the-project)
   - [Data structures used](#data-structures-used)
   - [Algorithm description](#algorithm-description)
+    - [1. Remove Noise](#1-remove-noise)
+    - [2. Binarization and Remove Lines](#2-binarization-and-remove-lines)
+    - [3. Segmentation](#3-segmentation)
+    - [4. Isolation and Detection](#4-isolation-and-detection)
 - [Installation](#installation)
 - [Running](#running)
 - [Roadmap](#roadmap)
@@ -27,14 +31,9 @@
 
 # About The Project
 
-> A CPU scheduler determines an order for the execution of its scheduled processes; it
-decides which process will run according to a certain data structure that keeps track
-of the processes in the system and their status.
-<br>A process, upon creation, has one of the three states: Running, Ready, Blocked (doing
-I/O, using other resources than CPU or waiting on unavailable resource).
-<br>OS for 1 CPU and fixed memory size 1024 byte
+> **Mushido** is a sheet music reader (optical music recognition system) that converts sheet music to a machine-readable version.
 
-<img src="./Assets/System_Diagram.png" alt="System Diagram" width=100% height=50%>
+<img src="https://user-images.githubusercontent.com/40190772/104846946-e81e7f80-58e5-11eb-8652-e54b86b46fe1.png">
 
 ## Data structures used
 - LinkedList for storing processes and memory free list.
@@ -42,20 +41,18 @@ I/O, using other resources than CPU or waiting on unavailable resource).
 
 ## Algorithm description
 
-> The process generator readsinput,initiate and create the scheduler and clock processes.
-<br>The scheduler  communicates  with  the  process  generator  through  2  semaphores and  message queues.<br> Whenever the process generator finishes it sends a message to the scheduler and busy waits till it’s killed.<br>The scheduler forksthe process and, for phase 2, allocates its memoryFor phase 2, We store the memory free list in an array with size 11 memory segments from 2^0 to 2^10, every index in the free list is a linked list ofsorted allocated memory segmentsTheprocessupdatesitsremaining time and stores it in a shared memoryso thescheduler can access it .Every one clock Scheduler takes the lead and pause the running process with semaphores .Every one clock Scheduler receives the data from Process generator, updates the running process PCB,  decides  to  stop the  running process  and  start  other one  or not according to the  selected algorithm (RR, SRTN, HPF) Thescheduler will remove the process from the queue and, for phase 2, deallocate the memory used by this processwhenthe remaining time of the process is zero.
+### 1. Remove Noise 
+  <img src="https://user-images.githubusercontent.com/35429211/116015851-16c19a00-a63b-11eb-89e8-6ed175528f03.png" alt="Remove Noise" width="100%">
 
-- Assumptions : 
-  - No process can arrive at 0 (this causes inconsistency as the program requires time to initialize)
-  - In phase 2 RR, If a process cannot be allocated (insufficient memory) it proceeds to the next process and if it is at the end it wraps around.
-  - In phase 2, If 2 or more processes have the same everything except memory size it does NOT get sorted by the memory size. We just get the same order of the process generator.
-  - The compiled programs is **.out** (not .o). it matters as we are calling them by name in the code.<br/> You can use this snippet for compiling the program. <br/> PS: the -lm argument while compiling scheduler is necessary.
-  ```sh 
-  gcc process_generator.c -o process_generator.out
-  gcc clk.c -o clk.out
-  gcc scheduler.c -lm -o scheduler.out
-  gcc process.c -o process.out 
-  ```
+### 2. Binarization and Remove Lines
+  <img src="https://user-images.githubusercontent.com/35429211/116015872-2a6d0080-a63b-11eb-9d94-83ab18c31f24.png" alt="Remove Lines" width="100%">
+
+### 3. Segmentation 
+  <img src="https://user-images.githubusercontent.com/35429211/116015885-3789ef80-a63b-11eb-902f-33babe56117d.png" alt="Segmentation" width="100%">
+
+### 4. Isolation and Detection
+  <img src="https://user-images.githubusercontent.com/35429211/116015904-440e4800-a63b-11eb-9d38-c306f70a2b72.png" alt="Isolation" width="100%">
+  
 # Installation
 
 1. **Clone the repository**
@@ -68,8 +65,12 @@ $ git clone https://github.com/D4rk1n/Mushido
 $ cd Mushido
 ```
 # Running
-
-run ```./process_generator.out-h``` to see explanation of the arguments
+```sh
+$ cd main
+```
+```sh
+$ python main.py $path_of_input_folder $path_of_output_folder
+```
 
 # Roadmap
 
