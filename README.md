@@ -30,7 +30,7 @@
 
 # About The Project
 
-> **Mushido** is a sheet music reader (optical music recognition system) that converts sheet music to a machine-readable version.
+**Mushido** is a sheet music reader (optical music recognition system) that converts sheet music to a machine-readable version.
 
 <img src="https://user-images.githubusercontent.com/40190772/104846946-e81e7f80-58e5-11eb-8652-e54b86b46fe1.png">
 
