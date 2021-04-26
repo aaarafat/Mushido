@@ -16,7 +16,6 @@
 
 - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
-  - [Data structures used](#data-structures-used)
   - [Algorithm description](#algorithm-description)
     - [1. Remove Noise](#1-remove-noise)
     - [2. Binarization and Remove Lines](#2-binarization-and-remove-lines)
@@ -35,9 +34,6 @@
 
 <img src="https://user-images.githubusercontent.com/40190772/104846946-e81e7f80-58e5-11eb-8652-e54b86b46fe1.png">
 
-## Data structures used
-- LinkedList for storing processes and memory free list.
-- Dynamic array (vector) for storing weighted turnaround time.
 
 ## Algorithm description
 
